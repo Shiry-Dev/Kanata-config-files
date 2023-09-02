@@ -1,9 +1,9 @@
-;;nv ~/start_kanata.sh 
+;;nv ~/start_kanataSmall.sh 
 ;;#!/bin/bash
-;;sudo /home/gabrielarrienfernandes/.cargo/bin/kanata --cfg /home/gabrielarrienfernandes/Documentos/kanata/myKanata.kbd
-;;chmod +x ~/start_kanata
+;;sudo /home/gabrielarrienfernandes/.cargo/bin/kanata --cfg /home/gabrielarrienfernandes/Documentos/kanata/myKanataSmall.kbd
+;;chmod +x ~/start_kanataSmall
 ;;nv ~/.bashrc
-;;alias kbs='~/start_kanata.sh'
+;;alias kbss='~/start_kanataSmall.sh'
 
 (defcfg
 	linux-dev /dev/input/by-id/usb-SayoDevice_L_03003A8C9E7B5450-event-kbd:/dev/input/by-id/usb-SayoDevice_R_030000879E7B5450-event-kbd
@@ -12,10 +12,10 @@
 )
 
 (defsrc
-	esc  q w e r t  y u i o p `
-	lctl a s d f g  h j k l ; ' 
-	lsft z x c v b  n m , . / rsft
-	       tab spc  ret bks  
+	q w e r t  y u i o p 
+	a s d f g  h j k l ;  
+	z x c v b  n m , . / 
+	 lalt tab spc  ret bks ralt 
 )
 
 (defalias
@@ -59,29 +59,30 @@
 )
 
 (deflayer base
-	esc  @q  w  e  r  t    y  u  i  o  @p `
-	lctl @a  s  @d  @f  g    h  @j  @k  l  @; '
-	lsft z  x  c  v  b    @n  @m  @,  @.  @/ rsft
-	            @ta @sp   ret @bs
+	@q  w   e   r  t      y   u   i   o  @p 
+	@a  s  @d  @f  g      h  @j  @k   l  @; 
+	 z  x   c   v  b     @n  @m  @,  @.  @/ 
+	       lalt   @ta @sp    ret @bs lalt
 )
 
 (deflayer nav
-	_   _   _   _   _   _      _    _    _   _     _   _
-	_   _   _   _   _   _      lft  down up  rght  _   _
-	_   _   _   _   _   _      _    _    _   _     _   _
-	                XX  _      _    _
+	   _   _   _   _   _      _    _    _   _     _   
+	   _   _   _   _   _      lft  down up  rght  _   
+	   _   _   _   _   _      _    _    _   _     _   
+              lalt XX  _      _    _   lalt
 )
 
 (deflayer sym
-	_    f1  f2  f3  f4  f5    f6  f7  f8  f9  f10   _
-	lctl  @um   @dois   @tres   @quatro   @cinco     @seis  @sete   @oito   @nove   @dez    _
-	lsft  _   _   _   _   _     -   =   [   ]   \   rsft
-	                lalt  XX     _   _   
+	   f1  f2  f3  f4  f5    f6  f7  f8  f9  f10   
+	  @um   @dois   @tres   @quatro   @cinco     @seis  @sete   @oito   @nove   @dez    
+	  _   _   _   _   _     -   =   [   ]   \   
+	                lalt tab  XX     _   _  lalt 
 )
 
 (deflayer empty
-	XX  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  XX
-	XX  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  XX
-	XX  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  XX
-	                XX  XX    XX  XX
+	  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  
+	  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  
+	  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  
+	          XX  XX  XX    XX  XX  XX  
 )
+
