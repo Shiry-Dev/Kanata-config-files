@@ -6,16 +6,18 @@
 ;;alias kbss='~/start_kanataSmall.sh'
 
 (defcfg
-	linux-dev /dev/input/by-id/usb-SayoDevice_L_03003A8C9E7B5450-event-kbd:/dev/input/by-id/usb-SayoDevice_R_030000879E7B5450-event-kbd
+	;;linux-dev /dev/input/by-id/usb-SayoDevice_L_03003A8C9E7B5450-event-kbd:/dev/input/by-id/usb-SayoDevice_R_030000879E7B5450-event-kbd
+	linux-dev /dev/input/by-id/usb-Evision_RGB_Keyboard-event-if01 
     ;;sem logs ao inicializar
     log-layer-changes no
 )
 
 (defsrc
-	q w e r t  y u i o p 
-	a s d f g  h j k l ;  
-	z x c v b  n m , . / 
-	 lalt tab spc  ret bks ralt 
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    
+  caps a    s    d    f    g    h    j    k    l    ;    '    \  ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+       lmet lalt           spc            ralt 
 )
 
 (defalias
@@ -30,8 +32,6 @@
 
     j (tap-hold-release 50 250 j rsft)
     k (tap-hold-release 50 250 k rctl)
-    ;; l (tap-hold-release 50 250 ; rmet)
-    ;; ; (tap-hold-release 50 250 ; rmet)
     ; (tap-dance 300 (; '))
 
     n (tap-dance 200 (n -))
@@ -42,7 +42,6 @@
 
 	sp (tap-hold-release 50 250 spc (layer-toggle nav))
 	ta (tap-hold-release 50 250 tab (layer-toggle sym))
-    ;;ret (tap-dance 200 (ret bks)) 
 	bs (tap-hold 50 250 bks (layer-toggle sym))
 
     um (tap-dance 300 (1 S-1))
@@ -59,30 +58,39 @@
 )
 
 (deflayer base
-	@q  w   e   r  t      y   u   i   o  @p 
-	@a  s  @d  @f  g      h  @j  @k   l  @; 
-	 z  x   c   v  b     @n  @m  @,  @.  @/ 
-	       lalt   @ta @sp    ret @bs lalt
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    
+  caps @a   s    @d   @f  g     h    @j   @k   l    ;    '    \  ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+       lmet lalt           @sp            ralt 
+
 )
 
 (deflayer nav
-	   _   _   _   _   _      _    _    _   _     _   
-	   _   _   _   _   _      lft  down up  rght  _   
-	   _   _   _   _   _      _    _    _   _     _   
-              lalt XX  _      _    _   lalt
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    
+  caps a    s    d    f    g    lft   down     up    rght    ;    '    \  ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+       lmet lalt           _            ralt 
+
 )
 
 (deflayer sym
-	   f1  f2  f3  f4  f5    f6  f7  f8  f9  f10   
-	  @um   @dois   @tres   @quatro   @cinco     @seis  @sete   @oito   @nove   @dez    
-	  _   _   _   _   _     -   =   [   ]   \   
-	                lalt tab  XX     _   _  lalt 
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    
+  caps a    s    d    f    g    h    j    k    l    ;    '    \  ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+       lmet lalt           spc            ralt 
+
 )
 
 (deflayer empty
-	  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  
-	  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  
-	  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  
-	          XX  XX  XX    XX  XX  XX  
+  esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    
+  caps a    s    d    f    g    h    j    k    l    ;    '    \  ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+       lmet lalt           @sp            ralt 
+
+
 )
 

@@ -21,8 +21,8 @@
 (defalias
 	1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 0 0
 
-    q (tap-dance 300 (q esc))
-    p (tap-dance 300 (p `))
+    e (tap-dance 250 (e esc))
+    i (tap-dance 250 (i `))
 
     a (tap-hold-release 50 250 a lmet)
     d (tap-hold-release 50 250 d rctl)
@@ -59,7 +59,7 @@
 )
 
 (deflayer base
-	esc  @q  w  e  r  t    y  u  i  o  @p `
+	esc  q  w  @e  r  t    y  u  @i  o  p `
 	lctl @a  s  @d  @f  g    h  @j  @k  l  @; '
 	lsft z  x  c  v  b    @n  @m  @,  @.  @/ rsft
 	            @ta @sp   ret @bs
@@ -76,7 +76,7 @@
 	_    f1  f2  f3  f4  f5    f6  f7  f8  f9  f10   _
 	lctl  @um   @dois   @tres   @quatro   @cinco     @seis  @sete   @oito   @nove   @dez    _
 	lsft  _   _   _   _   _     -   =   [   ]   \   rsft
-	                lalt  XX     _   _   
+	                lalt  XX     lalt   _   
 )
 
 (deflayer empty
