@@ -30,7 +30,7 @@
 ;; There are currently a maximum of 25 layers allowed.
 (deflayer qwerty
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  lalt q    w    e    r    t    y    u    i    o    p    [    ]    \
+  lalt q    w    @e    r    t    y    u    i    o    p    [    ]    \
   caps @a    s    @d    @f    g    h    @j    @k    l    ;    '    ralt
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet tab           @spc           ret rmet rctl
@@ -57,6 +57,7 @@
   grl (tap-hold 200 200 grv (layer-toggle layers))
   spc (tap-hold 50 250 spc (layer-toggle layers))
 
+  e (tap-dance 250 (e esc))
   a (tap-hold-release 50 250 a lmet)
   d (tap-hold-release 50 250 d rctl)
   f (tap-hold-release 50 250 f lsft)
