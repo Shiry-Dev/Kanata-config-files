@@ -30,10 +30,10 @@
 ;; There are currently a maximum of 25 layers allowed.
 (deflayer qwerty
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  lalt q    w    @e    r    t    y    u    i    o    p    [    ]    \
-  caps @a    s    @d    @f    g    h    @j    @k    l    ;    '    ralt
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet tab           @spc           ret rmet rctl
+  lalt q    w    e    r    t    y    u    @i    o    p    [    ]    \
+  caps @a    s    @d    @f    @g    h    @j    @k    l    @;    '    ret
+  lsft z    x    c    v    b    @n    @m    @,    @.    @/    rsft
+  lctl lmet tab           @spc           ralt rmet rctl
 )
 
 ;; The dvorak layer remaps the keys to the dvorak layout. In addition there is
@@ -57,13 +57,22 @@
   grl (tap-hold 200 200 grv (layer-toggle layers))
   spc (tap-hold 50 250 spc (layer-toggle layers))
 
-  e (tap-dance 250 (e esc))
+  i (tap-dance 250 (i `))
+
   a (tap-hold-release 50 250 a lmet)
   d (tap-hold-release 50 250 d rctl)
   f (tap-hold-release 50 250 f lsft)
 
+  g (tap-dance 250 (g esc))
   j (tap-hold-release 50 250 j rsft)
   k (tap-hold-release 50 250 k rctl)
+
+  ; (tap-dance 300 (; '))
+  n (tap-dance 200 (n -))
+  m (tap-dance 200 (m =))
+  , (tap-dance 200 (, [))
+  . (tap-dance 200 (. ]))
+  / (tap-dance 200 (/ \))
 
   ;; layer-switch changes the base layer.
   dvk (layer-switch dvorak)
