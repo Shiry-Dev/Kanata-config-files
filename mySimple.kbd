@@ -30,10 +30,10 @@
 ;; There are currently a maximum of 25 layers allowed.
 (deflayer qwerty
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  lalt q    w    e    r    t    y    u    @i    o    p    [    ]    \
-  caps @a    s    @d    @f    @g    h    @j    @k    l    @;    '    ret
-  lsft z    x    c    v    b    @n    @m    @,    @.    @/    rsft
-  lctl lmet tab           @spc           ralt rmet rctl
+  tab  @q    w    e    r    @t    y    u    @i    @o    p    [    ]    \
+  caps @a   @s    @d    @f    @g    h    @j    @k   @l    @;    '    ret
+  lsft z    x    c    v    @b    @n    @m    @,    @.    @/    rsft
+  lctl lmet  lalt          @spc           ralt rmet rctl
 )
 
 ;; The dvorak layer remaps the keys to the dvorak layout. In addition there is
@@ -57,16 +57,21 @@
   grl (tap-hold 200 200 grv (layer-toggle layers))
   spc (tap-hold 50 250 spc (layer-toggle layers))
 
+  t (tap-dance 250 (t tab))
   i (tap-dance 250 (i `))
 
   a (tap-hold-release 50 250 a lmet)
   d (tap-hold-release 50 250 d rctl)
   f (tap-hold-release 50 250 f lsft)
 
+  o (tap-dance 200 (o ret))
+  s (tap-hold-release 50 250 s lalt)
+  l (tap-hold-release 50 250 l lalt)
   g (tap-dance 250 (g esc))
   j (tap-hold-release 50 250 j rsft)
   k (tap-hold-release 50 250 k rctl)
 
+  b (tap-dance 200 (b bspc))
   ; (tap-dance 300 (; '))
   n (tap-dance 200 (n -))
   m (tap-dance 200 (m =))
@@ -80,6 +85,15 @@
 
   ;; tap for capslk, hold for lctl
   cap (tap-hold 200 200 caps lctl)
+
+  q (tap-hold-release  50 250 q (layer-toggle mouse))
+  ma↑ (movemouse-accel-up 3  65000 1 1)
+  ma← (movemouse-accel-left 3  65000 1 1)
+  ma↓ (movemouse-accel-down 3  65000 1 1)
+  ma→ (movemouse-accel-right 3  65000 1 1)
+  mwu (mwheel-up 50 120)
+  mwd (mwheel-down 50 120)
+
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
@@ -98,3 +112,18 @@
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _
 )
+
+(deflayer mouse
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    mlft @ma↑ mrgt _    _    _    _ 
+  _    _    _    _    _    _    _    @ma← @ma↓ @ma→ _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
+)
+
+;;  (deflayer mouse
+;;	XX  XX  XX  XX  XX  XX    XX  @mwd  @ma↑ @mwu  XX  XX
+;;	XX  XX  XX  XX  XX  XX    XX  @ma← @ma↓ @ma→  XX  XX
+;;	XX  XX  XX  XX  XX  XX    XX  XX  XX  XX  XX  XX
+;;	            XX  XX  XX    mlft  mrgt  XX
+;;)

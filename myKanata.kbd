@@ -30,6 +30,9 @@
     d (tap-hold-release 50 250 d rctl)
     f (tap-hold-release 50 250 f lsft)
 
+    s (tap-hold-release 50 250 s lalt)
+    l (tap-hold-release 50 250 l lalt)
+
     j (tap-hold-release 50 250 j rsft)
     k (tap-hold-release 50 250 k rctl)
     ;; l (tap-hold-release 50 250 ; rmet)
@@ -62,7 +65,7 @@
     nove (tap-dance 200 (9 S-0))
     dez (tap-dance 300 (0 S-8))
 
-    z (tap-hold-release  50 250 z (layer-toggle mouse))
+    q (tap-hold-release  50 250 q (layer-toggle mouse))
     ma↑ (movemouse-accel-up 3  65000 1 1)
     ma← (movemouse-accel-left 3  65000 1 1)
     ma↓ (movemouse-accel-down 3  65000 1 1)
@@ -78,9 +81,9 @@
 )
 
 (deflayer base
-	esc  q  w  e  r  t    y  u  @i  o  p `
-	lctl @a  s  @d  @f  @g    h  @j  @k  l  @; '
-	lsft @z  x  c  v  b    @n  @m  @,  @.  @/ rsft
+	esc  @q  w  e  r  t    y  u  @i  o  p `
+	lctl @a  @s  @d  @f  @g    h  @j  @k  @l  @; '
+	lsft z  x  c  v  b    @n  @m  @,  @.  @/ rsft
 	        lalt @ta @sp   ret @bs @lalt
 )
 
