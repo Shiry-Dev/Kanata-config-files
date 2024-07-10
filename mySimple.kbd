@@ -15,6 +15,10 @@
 ;; keys matches with deflayer declarations and all deflayer declarations must
 ;; have the same number of keys as defsrc. Any keys not listed in defsrc will
 ;; be passed straight to the operating system.
+(defcfg
+    ;;sem logs ao inicializar
+    log-layer-changes no
+)
 (defsrc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
@@ -30,9 +34,9 @@
 ;; There are currently a maximum of 25 layers allowed.
 (deflayer qwerty
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  @q    w    e    r    @t    y    u    @i    @o    p    [    ]    \
-  caps @a   @s    @d    @f    @g    h    @j    @k   @l    @;    '    ret
-  lsft z    x    c    v    @b    @n    @m    @,    @.    @/    rsft
+  tab  @q    w    e    r    t    y    u    @i    o    p    [    ]    \
+  caps @a   @s    @d    @f    g    h    @j    @k   @l    @;    '    ret
+  lsft z    x    c    v    b    @n    @m    @,    @.    @/    rsft
   lctl lmet  lalt          @spc           ralt rmet rctl
 )
 
@@ -57,21 +61,21 @@
   grl (tap-hold 200 200 grv (layer-toggle layers))
   spc (tap-hold 50 250 spc (layer-toggle layers))
 
-  t (tap-dance 250 (t tab))
+  ;;t (tap-dance 250 (t tab))
   i (tap-dance 250 (i `))
 
   a (tap-hold-release 50 250 a lmet)
   d (tap-hold-release 50 250 d rctl)
   f (tap-hold-release 50 250 f lsft)
 
-  o (tap-dance 200 (o ret))
+  ;;o (tap-dance 200 (o ret))
   s (tap-hold-release 50 250 s lalt)
   l (tap-hold-release 50 250 l lalt)
-  g (tap-dance 250 (g esc))
+  ;;g (tap-dance 250 (g esc))
   j (tap-hold-release 50 250 j rsft)
   k (tap-hold-release 50 250 k rctl)
 
-  b (tap-dance 200 (b bspc))
+  ;;b (tap-dance 200 (b bspc))
   ; (tap-dance 300 (; '))
   n (tap-dance 200 (n -))
   m (tap-dance 200 (m =))
@@ -107,8 +111,8 @@
 ;; behaviour is used when pressing that key.
 (deflayer layers
   _    @qwr @dvk lrld _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    lft  down up   rght _    _    _
+  _    _    _    esc  _    tab    _    _    _    ret    _    _    _    _
+  _    _    _    bspc _    _    lft  down up   rght _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _
 )
@@ -116,7 +120,7 @@
 (deflayer mouse
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    mlft @ma↑ mrgt _    _    _    _ 
-  _    _    _    _    _    _    _    @ma← @ma↓ @ma→ _    _    _
+  _    _    _    _    _    _    @mwd @ma← @ma↓ @ma→ @mwu   _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _
 )
