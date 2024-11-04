@@ -5,11 +5,11 @@
 ;;nv ~/.bashrc
 ;;alias kbs='~/start_kanata.sh'
 
-(defcfg
-	linux-dev /dev/input/by-id/usb-SayoDevice_L_03003A8C9E7B5450-event-kbd:/dev/input/by-id/usb-SayoDevice_R_030000879E7B5450-event-kbd
-    ;;sem logs ao inicializar
-    log-layer-changes no
-)
+;;(defcfg
+;;	linux-dev /dev/input/by-id/usb-SayoDevice_L_03003A8C9E7B5450-event-kbd:/dev/input/by-id/usb-SayoDevice_R_030000879E7B5450-event-kbd
+;;    ;;sem logs ao inicializar
+;;    log-layer-changes no
+;;)
 
 (defsrc
 	esc  q w e r t  y u i o p `
@@ -54,15 +54,15 @@
     ;;f2 (tap-dance 250 (f2 f1))
     ;;f9 (tap-dance 250 (f9 f10))
     um (tap-dance 300 (1 S-1))
-    dois (tap-dance 200 (2 S-2))
-    tres (tap-dance 200 (3 S-3))
-    quatro (tap-dance 200 (4 S-4))
-    cinco (tap-dance 200 (5 S-5))
+    dois (tap-dance 250 (2 S-2))
+    tres (tap-dance 250 (3 S-3))
+    quatro (tap-dance 250 (4 S-4))
+    cinco (tap-dance 250 (5 S-5))
 
-    seis (tap-dance 200 (6 S-6))
-    sete (tap-dance 200 (7 S-7))
-    oito (tap-dance 200 (8 S-9))
-    nove (tap-dance 200 (9 S-0))
+    seis (tap-dance 250 (6 S-6))
+    sete (tap-dance 250 (7 S-7))
+    oito (tap-dance 250 (8 S-9))
+    nove (tap-dance 250 (9 S-0))
     dez (tap-dance 300 (0 S-8))
 
     q (tap-hold-release  50 250 q (layer-toggle mouse))
@@ -106,7 +106,7 @@
 (deflayer sym
 	_    f1  f2  f3  f4  f5    f6  f7  f8  f9  f10   _
 	lctl  @um   @dois   @tres   @quatro   @cinco     @seis  @sete   @oito   @nove   @dez    _
-	lsft  f11   _   _   _   _     -   =   [   ]   \   rsft
+	lsft  f11   _   _   rctl   _     -   =   [   ]   \   rsft
 	            _   lalt  XX     lalt   _     _
 )
 

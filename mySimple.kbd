@@ -34,9 +34,9 @@
 ;; There are currently a maximum of 25 layers allowed.
 (deflayer qwerty
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  @q    w    e    r    t    y    u    @i    o    p    [    ]    \
-  caps @a   @s    @d    @f    g    h    @j    @k   @l    @;    '    ret
-  lsft z    x    c    v    b    @n    @m    @,    @.    @/    rsft
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps @a   s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet  lalt          @spc           ralt rmet rctl
 )
 
@@ -69,7 +69,7 @@
   f (tap-hold-release 50 250 f lsft)
 
   ;;o (tap-dance 200 (o ret))
-  s (tap-hold-release 50 250 s lalt)
+;;  s (tap-hold-release 50 250 s lalt)
   l (tap-hold-release 50 250 l lalt)
   ;;g (tap-dance 250 (g esc))
   j (tap-hold-release 50 250 j rsft)
@@ -90,7 +90,7 @@
   ;; tap for capslk, hold for lctl
   cap (tap-hold 200 200 caps lctl)
 
-  q (tap-hold-release  50 250 q (layer-toggle mouse))
+;;  q (tap-hold-release  50 250 q (layer-toggle mouse))
   ma↑ (movemouse-accel-up 3  65000 1 1)
   ma← (movemouse-accel-left 3  65000 1 1)
   ma↓ (movemouse-accel-down 3  65000 1 1)
@@ -117,13 +117,13 @@
   _    _    _              _              _    _    _
 )
 
-(deflayer mouse
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    mlft @ma↑ mrgt _    _    _    _ 
-  _    _    _    _    _    _    @mwd @ma← @ma↓ @ma→ @mwu   _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _
-)
+;;(deflayer mouse
+;;  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;; _    _    _    _    _    _    _    mlft @ma↑ mrgt _    _    _    _ 
+;; _    _    _    _    _    _    @mwd @ma← @ma↓ @ma→ @mwu   _    _
+;; _    _    _    _    _    _    _    _    _    _    _    _
+;; _    _    _              _              _    _    _
+;;)
 
 ;;  (deflayer mouse
 ;;	XX  XX  XX  XX  XX  XX    XX  @mwd  @ma↑ @mwu  XX  XX
